@@ -19,6 +19,12 @@
     "url": "https://github.com/anka1928/project-lvl1-s284/issues"
   },
   "homepage": "https://github.com/anka1928/project-lvl1-s284#readme",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
@@ -27,16 +33,11 @@
     "lodash": "^4.17.10",
     "readline-sync": "^1.4.9"
   },
-  "files": [
-    "dist"
-  ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1"
-  },
-  "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint-plugin-babel": "^5.1.0"
   }
 }
