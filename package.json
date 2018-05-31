@@ -1,6 +1,6 @@
 {
   "name": "brain-games1928",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "first hexlet project",
   "main": "index.js",
   "scripts": {
@@ -21,12 +21,14 @@
   "homepage": "https://github.com/anka1928/project-lvl1-s284#readme",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
+    "hexlet-pairs": "^1.0.7",
     "lodash": "^4.17.10",
     "readline-sync": "^1.4.9"
   },
