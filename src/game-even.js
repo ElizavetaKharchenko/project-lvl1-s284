@@ -1,18 +1,13 @@
 import readlineSync from 'readline-sync';
-// import { getRandom, isEven } from '../src/math';
 
-export const getRandom = () => Math.floor((Math.random() * 100) + 1);
-getRandom();
-
-export const isEven = num => (num % 2 === 0);
-isEven();
+const getRandom = () => Math.floor((Math.random() * 100) + 1);
+const isEven = num => (num % 2 === 0);
 
 export const correctAnswer = (num) => {
   if (isEven(num) === true) {
     return 'yes';
-  } else {
-    return 'no';
   }
+  return 'no';
 };
 
 export const game = () => {
@@ -20,7 +15,6 @@ export const game = () => {
   console.log('Answer "yes" if number even otherwise answer "no".');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
-  let correctAnswerCount = 0;
   for (let roundCount = 1; roundCount <= 3; roundCount += 1) {
     const question = getRandom();
     console.log(`Question: ${question}`);
@@ -28,10 +22,9 @@ export const game = () => {
     // userAnswer = userAnswer.toLowerCase();
     if (userAnswer.toLowerCase() === correctAnswer(question)) {
       console.log('Correct!');
-      correctAnswerCount += 1;
     } else {
       console.log(`Sorry, '${userAnswer}' is wrong answer`);
     }
   }
-  return console.log(`Congratulations, ${name}, you have ${correctAnswerCount} correct answers!`);
+  return console.log(`Congratulations, ${name}!`);
 };
