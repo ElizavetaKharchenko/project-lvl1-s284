@@ -1,6 +1,7 @@
 import { cons } from 'hexlet-pairs';
-import gameFlow from '..';
-import { getRandom } from '../utils';
+import { gameFlow } from '..';
+
+const getRandom = () => Math.floor((Math.random() * 100) + 1);
 
 const gamePair = () => {
   const operators = ['+', '-', '*'];
