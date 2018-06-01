@@ -1,35 +1,26 @@
 import { cons } from 'hexlet-pairs';
-import { gameFlow } from '..';
+import gameFlow from '..';
+import { getRandom } from '../utils';
 
-const getRandom = () => Math.floor((Math.random() * 100) + 1);
+const gcd = (num1, num2) => {
+  if (num2 === 0) {
+    return num1;
+  }
+  return gcd(num2, num1 % num2);
+};
 
 const gamePair = () => {
-  const operators = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * 3);
-  const randomOperator = operators[randomIndex];
   const firstNum = getRandom();
   const secondNum = getRandom();
-  const question = `${firstNum} ${randomOperator} ${secondNum}`;
-  let correctAnswer;
+  const question = `${firstNum} ${secondNum}`;
+  let correctAnswer = gcd(firstNum, secondNum);
+  correctAnswer = correctAnswer.toString();
 
-  switch (randomOperator) {
-    case '+':
-      correctAnswer = firstNum + secondNum;
-      correctAnswer = correctAnswer.toString();
-      break;
-    case '-':
-      correctAnswer = firstNum - secondNum;
-      correctAnswer = correctAnswer.toString();
-      break;
-    default:
-      correctAnswer = firstNum * secondNum;
-      correctAnswer = correctAnswer.toString();
-  }
   return cons(question, correctAnswer);
 };
 
 const game = () => {
-  const description = 'What is the result of the expression?';
+  const description = 'Find the greatest common divisor of given numbers.';
   gamePair();
   gameFlow(description, gamePair);
 };
