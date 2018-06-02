@@ -1,6 +1,8 @@
 import { cons } from 'hexlet-pairs';
 import gameFlow from '..';
-import { getRandom, isEven } from '../utils';
+import { getRandom } from '../utils';
+
+const isEven = num => (num % 2 === 0);
 
 const rightAnswer = (num) => {
   if (isEven(num) === true) {
@@ -8,14 +10,15 @@ const rightAnswer = (num) => {
   }
   return 'no';
 };
-const gamePair = () => {
+const queAndAnswer = () => {
   const question = getRandom();
   const correctAnswer = rightAnswer(question);
   return cons(question, correctAnswer);
 };
 
+const description = 'Answer "yes" if number even otherwise answer "no".';
+
 const game = () => {
-  const description = 'Answer "yes" if number even otherwise answer "no".';
-  gameFlow(description, gamePair);
+  gameFlow(description, queAndAnswer);
 };
 export default game;

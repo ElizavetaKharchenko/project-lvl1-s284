@@ -1,6 +1,6 @@
 {
   "name": "brain-games1928",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "first hexlet project",
   "main": "index.js",
   "scripts": {
