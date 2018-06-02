@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import gameFlow from '..';
-import { getRandom } from '../utils';
+import getRandom from '../utils';
 
 const gcd = (num1, num2) => {
   if (num2 === 0) {
@@ -10,8 +10,8 @@ const gcd = (num1, num2) => {
 };
 
 const queAndAnswer = () => {
-  const firstNum = getRandom();
-  const secondNum = getRandom();
+  const firstNum = getRandom(1, 99);
+  const secondNum = getRandom(1, 99);
   const question = `${firstNum} ${secondNum}`;
   const correctAnswer = String(gcd(firstNum, secondNum));
 

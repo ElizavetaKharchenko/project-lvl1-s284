@@ -1,17 +1,13 @@
 import { cons } from 'hexlet-pairs';
 import gameFlow from '..';
-import { getRandom } from '../utils';
+import getRandom from '../utils';
 
 const isEven = num => (num % 2 === 0);
 
-const rightAnswer = (num) => {
-  if (isEven(num) === true) {
-    return 'yes';
-  }
-  return 'no';
-};
+const rightAnswer = num => (isEven(num) ? 'yes' : 'no');
+
 const queAndAnswer = () => {
-  const question = getRandom();
+  const question = getRandom(1, 99);
   const correctAnswer = rightAnswer(question);
   return cons(question, correctAnswer);
 };

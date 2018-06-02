@@ -1,14 +1,14 @@
 import { cons } from 'hexlet-pairs';
 import gameFlow from '..';
-import { getRandom } from '../utils';
+import getRandom from '../utils';
 
 const operators = ['+', '-', '*'];
 const randomIndex = Math.floor(Math.random() * 3);
 const randomOperator = operators[randomIndex];
 
 const queAndAnswer = () => {
-  const firstNum = getRandom();
-  const secondNum = getRandom();
+  const firstNum = getRandom(1, 99);
+  const secondNum = getRandom(1, 99);
   const question = `${firstNum} ${randomOperator} ${secondNum}`;
   let correctAnswer;
 
