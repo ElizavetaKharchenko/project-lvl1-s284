@@ -24,3 +24,6 @@ start-balance:
 
 start-prog:
 		npm run babel-node -- src/bin/brain-progression.js
+
+start-prime:
+		npm run babel-node -- src/bin/brain-prime.js
