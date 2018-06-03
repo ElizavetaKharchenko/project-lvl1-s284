@@ -9,7 +9,7 @@ const gcd = (num1, num2) => {
   return gcd(num2, num1 % num2);
 };
 
-const queAndAnswer = () => {
+const questAndAnswer = () => {
   const firstNum = getRandom(1, 99);
   const secondNum = getRandom(1, 99);
   const question = `${firstNum} ${secondNum}`;
@@ -21,6 +21,6 @@ const queAndAnswer = () => {
 const description = 'Find the greatest common divisor of given numbers.';
 
 const game = () => {
-  gameFlow(description, queAndAnswer);
+  gameFlow(description, questAndAnswer);
 };
 export default game;

@@ -6,7 +6,7 @@ const operators = ['+', '-', '*'];
 const randomIndex = Math.floor(Math.random() * 3);
 const randomOperator = operators[randomIndex];
 
-const queAndAnswer = () => {
+const questionAndAnswer = () => {
   const firstNum = getRandom(1, 99);
   const secondNum = getRandom(1, 99);
   const question = `${firstNum} ${randomOperator} ${secondNum}`;
@@ -28,6 +28,6 @@ const queAndAnswer = () => {
 const description = 'What is the result of the expression?';
 
 const game = () => {
-  gameFlow(description, queAndAnswer);
+  gameFlow(description, questionAndAnswer);
 };
 export default game;

@@ -16,26 +16,27 @@ const getSumOfDigits = (num) => {
 
 const getDigitsCount = num => String(num).length;
 
-const iterBalance = (sum, count, resultStr) => {
-  if (count === 0) {
-    return Number(resultStr);
+const getBalanceNum = (num) => {
+  let balanceNum = '';
+  let sumOfDigits = getSumOfDigits(num);
+  let digitsCount = getDigitsCount(num);
+  for (; digitsCount > 0; digitsCount -= 1) {
+    const newDigit = Math.floor(sumOfDigits / digitsCount);
+    sumOfDigits -= newDigit;
+    balanceNum += `${newDigit}`;
   }
-  const newDigit = Math.floor(sum / count);
-  const newResultStr = resultStr + String(newDigit);
-  return iterBalance(sum - newDigit, count - 1, newResultStr);
+  return balanceNum;
 };
 
-const queAndAnswer = () => {
+const questionAndAnswer = () => {
   const number = getRandom(100, 9999);
   const question = `${number}`;
-  const sumOfDigits = getSumOfDigits(number);
-  const digitsCount = getDigitsCount(number);
-  const correctAnswer = String(iterBalance(sumOfDigits, digitsCount, ''));
+  const correctAnswer = getBalanceNum(number);
 
   return cons(question, correctAnswer);
 };
 
 const game = () => {
-  gameFlow(description, queAndAnswer);
+  gameFlow(description, questionAndAnswer);
 };
 export default game;

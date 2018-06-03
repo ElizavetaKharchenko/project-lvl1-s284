@@ -6,7 +6,7 @@ const isEven = num => (num % 2 === 0);
 
 const rightAnswer = num => (isEven(num) ? 'yes' : 'no');
 
-const queAndAnswer = () => {
+const questionAndAnswer = () => {
   const question = getRandom(1, 99);
   const correctAnswer = rightAnswer(question);
   return cons(question, correctAnswer);
@@ -15,6 +15,6 @@ const queAndAnswer = () => {
 const description = 'Answer "yes" if number even otherwise answer "no".';
 
 const game = () => {
-  gameFlow(description, queAndAnswer);
+  gameFlow(description, questionAndAnswer);
 };
 export default game;

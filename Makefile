@@ -21,3 +21,6 @@ start-gcd:
 
 start-balance:
 	npm run babel-node -- src/bin/brain-balance.js
+
+start-prog:
+		npm run babel-node -- src/bin/brain-progression.js
