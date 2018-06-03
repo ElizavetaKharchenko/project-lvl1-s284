@@ -15,10 +15,11 @@ const getProgression = (firstNum, length, step) => {
   return progressionArray;
 };
 
+const progressionLength = 10;
+
 const questionAndAnswer = () => {
   const firstNum = getRandom(1, 4);
   const step = getRandom(1, 8);
-  const progressionLength = 10;
   const progression = getProgression(firstNum, progressionLength, step);
   const hiddenPosition = getRandom(1, 9);
   const correctAnswer = `${progression[hiddenPosition]}`;
